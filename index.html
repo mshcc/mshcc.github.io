@@ -130,6 +130,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jetbrain用到2089" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">半永久破解</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/" class="archive-article-date">
+  	<time datetime="2020-01-21T09:29:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="下载破解包"><a href="#下载破解包" class="headerlink" title="下载破解包"></a>下载破解包</h1><p><a href="https://pan.baidu.com/s/1eE9Hhuizq7quPZ1HCNNWlQ" target="_blank" rel="noopener">百度网盘</a></p>
+<h1 id="下载需要的jetbrain工具"><a href="#下载需要的jetbrain工具" class="headerlink" title="下载需要的jetbrain工具"></a>下载需要的jetbrain工具</h1><p><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">官网</a></p>
+<h1 id="安装完成选择试用"><a href="#安装完成选择试用" class="headerlink" title="安装完成选择试用"></a>安装完成选择试用</h1><h4 id="此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options"><a href="#此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options" class="headerlink" title="此时不要着急创建项目，右下角configure→ Edit Custom VM Options"></a>此时不要着急创建项目，右下角configure→ Edit Custom VM Options</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-javaagent:***<span class="comment">#jetbrains-agent.jar在本机的路径</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="重启编译器"><a href="#重启编译器" class="headerlink" title="重启编译器"></a>重启编译器</h1><h4 id="右下角-configure→Manage-License→actiation-code"><a href="#右下角-configure→Manage-License→actiation-code" class="headerlink" title="右下角 configure→Manage License→actiation code"></a>右下角 configure→Manage License→actiation code</h4><p>输入上面下载的激活码，大功告成</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-Django2.2配置Mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -158,6 +229,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br><span class="line"><span class="comment">#个人习惯__init__.py</span></span><br></pre></td></tr></table></figure>
 
 <p><del>在安装mysql时要注意时区问题</del></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##在my.ini [mysqld]区域中加上</span></span><br><span class="line">default-time_zone = <span class="string">'+8:00'</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h1 id="在settings-py中把sqlite换成mysql"><a href="#在settings-py中把sqlite换成mysql" class="headerlink" title="在settings.py中把sqlite换成mysql"></a>在settings.py中把sqlite换成mysql</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mysite'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'123456'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">'3306'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><del>此时执行makemigration会提示django2.2/mysql ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3</del></p>
