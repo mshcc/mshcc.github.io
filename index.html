@@ -130,6 +130,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVAEE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/JAVAEE/">JAVAEE</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/03/01/JAVAEE/" class="archive-article-date">
+  	<time datetime="2020-03-01T13:34:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//TODO 设置状态码302         </span></span><br><span class="line">        resp.setStatus(<span class="number">302</span>);</span><br><span class="line"><span class="comment">//设置响应头</span></span><br><span class="line">        resp.setHeader(<span class="string">"location"</span>,<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//也可以	</span></span><br><span class="line">        resp.sendRedirect(<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//  重定向里的参数如果没有 以/开头，就访问相对路径，否则访问绝对路径(端口后跟上参数)</span></span><br><span class="line"><span class="comment">//可以获取相应的项目路径再加上需要的路径构成绝对路径</span></span><br><span class="line">        String contextPath = req.getContextPath();</span><br><span class="line">        resp.sendRedirect(contextPath+<span class="string">"/redirect002"</span>);</span><br></pre></td></tr></table></figure>
+
+<p><del>不明白为什么从浏览器访问服务器，重定向时需要绝对路径，暂时没发现相对路径会出错</del></p>
+<h2 id="手撸验证码"><a href="#手撸验证码" class="headerlink" title="手撸验证码"></a>手撸验证码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> String str=<span class="string">"ABCDEFGHIGKLMNPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789"</span>;</span><br><span class="line">        <span class="comment">//创建图片对象</span></span><br><span class="line">        <span class="keyword">int</span> height=<span class="number">50</span>;</span><br><span class="line">        <span class="keyword">int</span> width=<span class="number">100</span>;</span><br><span class="line">        BufferedImage image=<span class="keyword">new</span> BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        <span class="comment">//弄成验证码的亚子</span></span><br><span class="line">        Graphics graphics = image.getGraphics();<span class="comment">//画笔对象</span></span><br><span class="line">        graphics.setColor(Color.cyan);</span><br><span class="line">        graphics.fillRect(<span class="number">0</span>,<span class="number">0</span>,width,height);<span class="comment">//填充</span></span><br><span class="line">        graphics.setColor(Color.black);</span><br><span class="line">        graphics.drawRect(<span class="number">0</span>,<span class="number">0</span>,width-<span class="number">1</span>,height-<span class="number">1</span>);<span class="comment">//边框</span></span><br><span class="line"></span><br><span class="line">        graphics.setColor(Color.black);<span class="comment">//内容</span></span><br><span class="line">        Random ran=<span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> anInt = ran.nextInt(str.length());</span><br><span class="line">            <span class="keyword">char</span> ch = str.charAt(anInt);</span><br><span class="line">            graphics.drawString(ch+<span class="string">""</span>,width/<span class="number">5</span>*i,height/<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        添加干扰</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=ran.nextInt(<span class="number">10</span>)*<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x1=ran.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> x2=ran.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> y1=ran.nextInt(height);</span><br><span class="line">            <span class="keyword">int</span> y2=ran.nextInt(height);</span><br><span class="line">            graphics.drawLine(x1,y1,x2,y2);</span><br><span class="line">        &#125;</span><br><span class="line">        ImageIO.write(image,<span class="string">"jpg"</span>,resp.getOutputStream());</span><br></pre></td></tr></table></figure>
+
+
+
+<p>持续更新~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/JAVAEE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-JdbcTemplate 简单用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -208,7 +282,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">半永久破解</a>
+      <a class="article-title" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">半永久破解(仅19.3.1有效)</a>
     </h1>
   
 
@@ -223,7 +297,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="下载破解包"><a href="#下载破解包" class="headerlink" title="下载破解包"></a>下载破解包</h1><p><a href="https://pan.baidu.com/s/1eE9Hhuizq7quPZ1HCNNWlQ" target="_blank" rel="noopener">百度网盘</a></p>
-<h1 id="下载需要的jetbrain工具"><a href="#下载需要的jetbrain工具" class="headerlink" title="下载需要的jetbrain工具"></a>下载需要的jetbrain工具</h1><p><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">官网</a></p>
+<h1 id="下载需要的jetbrain工具"><a href="#下载需要的jetbrain工具" class="headerlink" title="下载需要的jetbrain工具"></a>下载需要的jetbrain工具</h1><p><del><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">官网</a>已近无法破解最新版本</del></p>
+<p><a href="https://pan.baidu.com/s/1zs8qW_Utg1b3aMT0xt7NYA" target="_blank" rel="noopener">GoLand</a>    提取码：e9ws</p>
+<p><a href="https://pan.baidu.com/s/1TQKKFJoiy9xTrWh7ZNIJmw" target="_blank" rel="noopener">IDEA</a>    提取码：ynpp</p>
+<p><a href="https://pan.baidu.com/s/1VCTL21zvB_Ga4pQbCFONHw" target="_blank" rel="noopener">WebStorm</a>    提取码：20yn</p>
+<p><a href="https://pan.baidu.com/s/14kYCupV5NbHZKmQAhps33A" target="_blank" rel="noopener">PyCharm</a>    提取码：9dtw</p>
+<p><a href="https://pan.baidu.com/s/1OsydOpKoCUrq3_n5zh78Xw" target="_blank" rel="noopener">PhpStorm</a>    提取码：iict</p>
 <h1 id="安装完成选择试用"><a href="#安装完成选择试用" class="headerlink" title="安装完成选择试用"></a>安装完成选择试用</h1><h4 id="此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options"><a href="#此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options" class="headerlink" title="此时不要着急创建项目，右下角configure→ Edit Custom VM Options"></a>此时不要着急创建项目，右下角configure→ Edit Custom VM Options</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在最后一行加入</span></span><br><span class="line">-javaagent:***<span class="comment">#jetbrains-agent.jar在本机的路径</span></span><br></pre></td></tr></table></figure>
 
 <h1 id="重启编译器"><a href="#重启编译器" class="headerlink" title="重启编译器"></a>重启编译器</h1><h4 id="右下角-configure→Manage-License→actiation-code"><a href="#右下角-configure→Manage-License→actiation-code" class="headerlink" title="右下角 configure→Manage License→actiation code"></a>右下角 configure→Manage License→actiation code</h4><p>输入上面下载的激活码，大功告成</p>
