@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>学习ing</title>
+  <title>Spring中的注解 | 学习ing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="学习ing">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="1234567891011&#x2F;&#x2F;   创建对象		相当于xml文件中的bean标签@Component(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样@Controller:一般用在表现层      @Service：一般用于业务层@Repository：一般用在持久层① 持久层：采用DAO模式，建立实体类和数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring中的注解">
+<meta property="og:url" content="http://yoursite.com/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/index.html">
 <meta property="og:site_name" content="学习ing">
+<meta property="og:description" content="1234567891011&#x2F;&#x2F;   创建对象		相当于xml文件中的bean标签@Component(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样@Controller:一般用在表现层      @Service：一般用于业务层@Repository：一般用在持久层① 持久层：采用DAO模式，建立实体类和数据">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-08T11:34:04.000Z">
+<meta property="article:modified_time" content="2020-03-08T12:14:33.833Z">
 <meta property="article:author" content="mshcc">
 <meta name="twitter:card" content="summary">
   
@@ -128,17 +132,15 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Spring中的注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Spring中的注解" class="article article-type-post " itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/">Spring中的注解</a>
+    <h1 class="article-title" itemprop="name">
+      Spring中的注解
     </h1>
   
 
@@ -172,16 +174,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&#39;小说爬虫/简陋&#39;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -201,395 +262,17 @@
 
 
 
-
-
-
-  
-    <article id="post-小说爬虫-简陋" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/">&#39;小说爬虫/简陋&#39;</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/" class="archive-article-date">
-  	<time datetime="2020-03-06T15:31:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="爬虫初窥"><a href="#爬虫初窥" class="headerlink" title="爬虫初窥"></a>爬虫初窥</h3><h6 id="用爬虫写了个简单爬取小说的样例"><a href="#用爬虫写了个简单爬取小说的样例" class="headerlink" title="用爬虫写了个简单爬取小说的样例"></a>用爬虫写了个简单爬取小说的样例</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment">#爬取小说《三寸人间》</span></span><br><span class="line">sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">'utf8'</span>)</span><br><span class="line">baseUrl=<span class="string">'http://www.ddxsku.com/'</span><span class="comment">#对于该网的小说，只要改一下首页就能继续用</span></span><br><span class="line">firstPage=<span class="string">"http://www.ddxsku.com/files/article/html/0/43/3615671.html"</span></span><br><span class="line">saveFile=<span class="string">'数据采集及处理\三寸人间.txt'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetText</span><span class="params">(ur)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        html=requests.get(ur).content.decode(<span class="string">'utf8'</span>)</span><br><span class="line">        title=re.findall(<span class="string">r'三寸人间&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;h1&gt;(.*?)&lt;/h1&gt;&lt;/dd&gt;'</span>,html,re.S)[<span class="number">0</span>]</span><br><span class="line">        print(title)</span><br><span class="line">        body=re.findall(<span class="string">r'&lt;dd id="contents"&gt;(.*?)&lt;/dd&gt;'</span>,html,re.S)[<span class="number">0</span>]</span><br><span class="line">        body=<span class="string">'&lt;br /&gt;'</span>+body</span><br><span class="line">        texts=re.findall(<span class="string">r'&lt;br /&gt;(.*?)&lt;br /&gt;'</span>,body,re.S)</span><br><span class="line">        text=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> tex <span class="keyword">in</span> texts:</span><br><span class="line">            tx=tex.replace(<span class="string">"&amp;nbsp;&amp;nbsp;"</span>,<span class="string">' '</span>).replace(<span class="string">"&amp;nbsp;"</span>,<span class="string">''</span>).replace(<span class="string">'\r'</span>,<span class="string">''</span>).replace(<span class="string">'﻿'</span>,<span class="string">''</span>)</span><br><span class="line">            text+=tx</span><br><span class="line">        SavePage(title+text)</span><br><span class="line">        nextPage=re.findall(<span class="string">r'返回目录&lt;/a&gt;&lt;a href="(.*?)"&gt;下一页&lt;/a&gt;'</span>,html,re.S)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> nextPage:</span><br><span class="line">            GetText(baseUrl+nextPage)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">"Error"</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SavePage</span><span class="params">(zj)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(saveFile,<span class="string">'a'</span>,encoding=<span class="string">'utf8'</span>)<span class="keyword">as</span> w:</span><br><span class="line">        w.write(zj)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    GetText(firstPage)</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-JAVAEE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/JAVAEE/">JAVAEE</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/03/01/JAVAEE/" class="archive-article-date">
-  	<time datetime="2020-03-01T13:34:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//TODO 设置状态码302         </span></span><br><span class="line">        resp.setStatus(<span class="number">302</span>);</span><br><span class="line"><span class="comment">//设置响应头</span></span><br><span class="line">        resp.setHeader(<span class="string">"location"</span>,<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//也可以	</span></span><br><span class="line">        resp.sendRedirect(<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//  重定向里的参数如果没有 以/开头，就访问相对路径，否则访问绝对路径(端口后跟上参数)</span></span><br><span class="line"><span class="comment">//可以获取相应的项目路径再加上需要的路径构成绝对路径</span></span><br><span class="line">        String contextPath = req.getContextPath();</span><br><span class="line">        resp.sendRedirect(contextPath+<span class="string">"/redirect002"</span>);</span><br></pre></td></tr></table></figure>
-
-<p><del>不明白为什么从浏览器访问服务器，重定向时需要绝对路径，暂时没发现相对路径会出错</del></p>
-<h2 id="手撸验证码"><a href="#手撸验证码" class="headerlink" title="手撸验证码"></a>手撸验证码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> String str=<span class="string">"ABCDEFGHIGKLMNPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789"</span>;</span><br><span class="line">        <span class="comment">//创建图片对象</span></span><br><span class="line">        <span class="keyword">int</span> height=<span class="number">50</span>;</span><br><span class="line">        <span class="keyword">int</span> width=<span class="number">100</span>;</span><br><span class="line">        BufferedImage image=<span class="keyword">new</span> BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        <span class="comment">//弄成验证码的亚子</span></span><br><span class="line">        Graphics graphics = image.getGraphics();<span class="comment">//画笔对象</span></span><br><span class="line">        graphics.setColor(Color.cyan);</span><br><span class="line">        graphics.fillRect(<span class="number">0</span>,<span class="number">0</span>,width,height);<span class="comment">//填充</span></span><br><span class="line">        graphics.setColor(Color.black);</span><br><span class="line">        graphics.drawRect(<span class="number">0</span>,<span class="number">0</span>,width-<span class="number">1</span>,height-<span class="number">1</span>);<span class="comment">//边框</span></span><br><span class="line"></span><br><span class="line">        graphics.setColor(Color.black);<span class="comment">//内容</span></span><br><span class="line">        Random ran=<span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> anInt = ran.nextInt(str.length());</span><br><span class="line">            <span class="keyword">char</span> ch = str.charAt(anInt);</span><br><span class="line">            graphics.drawString(ch+<span class="string">""</span>,width/<span class="number">5</span>*i,height/<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        添加干扰</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=ran.nextInt(<span class="number">10</span>)*<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x1=ran.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> x2=ran.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> y1=ran.nextInt(height);</span><br><span class="line">            <span class="keyword">int</span> y2=ran.nextInt(height);</span><br><span class="line">            graphics.drawLine(x1,y1,x2,y2);</span><br><span class="line">        &#125;</span><br><span class="line">        ImageIO.write(image,<span class="string">"jpg"</span>,resp.getOutputStream());</span><br></pre></td></tr></table></figure>
-
-
-
-<p>持续更新~</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/JAVAEE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-JdbcTemplate 简单用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">JdbcTemplate 简单用法</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:39:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JdbcTemplate-简单用法"><a href="#JdbcTemplate-简单用法" class="headerlink" title="JdbcTemplate 简单用法"></a>JdbcTemplate 简单用法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;定义sql 例如</span><br><span class="line">String sql &#x3D; &quot;select * from user where username&#x3D;? and password &#x3D;?;&quot;;</span><br><span class="line">&#x2F;&#x2F;简单校验用户名和密码是否匹配</span><br><span class="line">&#x2F;&#x2F;创建User</span><br><span class="line">User Loginer &#x3D; new User();</span><br><span class="line">Loginer.setUsername(&quot;lisi&quot;);</span><br><span class="line">Loginer.setPassword(&quot;lisi123&quot;);</span><br><span class="line">Properties pro &#x3D; new Properties();</span><br><span class="line">pro.load(logintest.class.getClassLoader().getResourceAsStream(&quot;droid.properties&quot;));</span><br><span class="line">&#x2F;&#x2F;直接打印查询结果或者提示错误</span><br><span class="line">try&#123;</span><br><span class="line">    System.out.println(new JdbcTemplate(DruidDataSourceFactory.createDataSource(pro)).</span><br><span class="line">            queryForObject(sql, new BeanPropertyRowMapper&lt;User&gt;(User.class),</span><br><span class="line">                    Loginer.getUsername(), Loginer.getPassword()));</span><br><span class="line">&#125;catch (DataAccessException e)&#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">    System.out.println(&quot;账号或密码错误&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义的User类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> username;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;<span class="keyword">this</span>.username = username;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> password;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;<span class="keyword">this</span>.password = password;&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;"</span> +<span class="string">"username='"</span> + username + <span class="string">'\''</span> +<span class="string">", password='"</span> + password + <span class="string">'\''</span> +<span class="string">'&#125;'</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-jetbrain用到2089" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">半永久破解(仅19.3.1有效)</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/" class="archive-article-date">
-  	<time datetime="2020-01-21T09:29:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="下载破解包"><a href="#下载破解包" class="headerlink" title="下载破解包"></a>下载破解包</h1><p><a href="https://pan.baidu.com/s/1eE9Hhuizq7quPZ1HCNNWlQ" target="_blank" rel="noopener">百度网盘</a></p>
-<h1 id="下载需要的jetbrain工具"><a href="#下载需要的jetbrain工具" class="headerlink" title="下载需要的jetbrain工具"></a>下载需要的jetbrain工具</h1><p><del><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">官网</a>已近无法破解最新版本</del></p>
-<p><a href="https://pan.baidu.com/s/1zs8qW_Utg1b3aMT0xt7NYA" target="_blank" rel="noopener">GoLand</a>    提取码：e9ws</p>
-<p><a href="https://pan.baidu.com/s/1TQKKFJoiy9xTrWh7ZNIJmw" target="_blank" rel="noopener">IDEA</a>    提取码：ynpp</p>
-<p><a href="https://pan.baidu.com/s/1VCTL21zvB_Ga4pQbCFONHw" target="_blank" rel="noopener">WebStorm</a>    提取码：20yn</p>
-<p><a href="https://pan.baidu.com/s/14kYCupV5NbHZKmQAhps33A" target="_blank" rel="noopener">PyCharm</a>    提取码：9dtw</p>
-<p><a href="https://pan.baidu.com/s/1OsydOpKoCUrq3_n5zh78Xw" target="_blank" rel="noopener">PhpStorm</a>    提取码：iict</p>
-<h1 id="安装完成选择试用"><a href="#安装完成选择试用" class="headerlink" title="安装完成选择试用"></a>安装完成选择试用</h1><h4 id="此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options"><a href="#此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options" class="headerlink" title="此时不要着急创建项目，右下角configure→ Edit Custom VM Options"></a>此时不要着急创建项目，右下角configure→ Edit Custom VM Options</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在最后一行加入</span></span><br><span class="line">-javaagent:***<span class="comment">#jetbrains-agent.jar在本机的路径</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="重启编译器"><a href="#重启编译器" class="headerlink" title="重启编译器"></a>重启编译器</h1><h4 id="右下角-configure→Manage-License→actiation-code"><a href="#右下角-configure→Manage-License→actiation-code" class="headerlink" title="右下角 configure→Manage License→actiation code"></a>右下角 configure→Manage License→actiation code</h4><p>输入上面下载的激活码，大功告成</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-Django2.2配置Mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/">Django2.2配置MySQL</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/" class="archive-article-date">
-  	<time datetime="2020-01-18T03:46:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装pymysql"><a href="#安装pymysql" class="headerlink" title="安装pymysql"></a>安装pymysql</h1><ul>
-<li>File→Settings→Project Interpreter→右侧加号→搜索安装pymysql→apply→在<strong>init</strong>.py中</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br><span class="line"><span class="comment">#个人习惯__init__.py</span></span><br></pre></td></tr></table></figure>
-
-<p><del>在安装mysql时要注意时区问题</del></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##在my.ini [mysqld]区域中加上</span></span><br><span class="line">default-time_zone = <span class="string">'+8:00'</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="在settings-py中把sqlite换成mysql"><a href="#在settings-py中把sqlite换成mysql" class="headerlink" title="在settings.py中把sqlite换成mysql"></a>在settings.py中把sqlite换成mysql</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mysite'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'123456'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">'3306'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><del>此时执行makemigration会提示django2.2/mysql ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3</del></p>
-<ul>
-<li>不管我们遇到什么样的困难，勇敢的面对它，办法总比困难多</li>
-</ul>
-<h1 id="解决mysqlclient-1-3-13-or-newer-is-required-you-have-0-9-3"><a href="#解决mysqlclient-1-3-13-or-newer-is-required-you-have-0-9-3" class="headerlink" title="解决mysqlclient 1.3.13 or newer is required; you have 0.9.3"></a>解决mysqlclient 1.3.13 or newer is required; you have 0.9.3</h1><ul>
-<li>找到Anaconda安装目录，例如我的是D:\Anaconda</li>
-<li>进入D:\Anaconda3\Lib\site-packages\django\db\backends\mysql</li>
-<li>修改base.py</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注释下面两行 35/36</span></span><br><span class="line"><span class="keyword">if</span> version &lt; (<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>):</span><br><span class="line">     <span class="keyword">raise</span> ImproperlyConfigured(<span class="string">"mysqlclient 1.3.3 or newer is required; you have %s"</span> % Database.__version__)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改operations.py</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#146行</span><br><span class="line">if query is not None:</span><br><span class="line">    query &#x3D; query.decode(errors&#x3D;&#39;replace&#39;)</span><br><span class="line">return query</span><br><span class="line">#改为</span><br><span class="line">if query is not None:</span><br><span class="line">    query &#x3D; query.encode(errors&#x3D;&#39;replace&#39;)</span><br><span class="line">return query</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="这个时候，就大功告成了"><a href="#这个时候，就大功告成了" class="headerlink" title="这个时候，就大功告成了"></a>这个时候，就大功告成了</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
   
   
+  
+
+  
+
+  
+
+  
+
+
 
 
           </div>
@@ -612,8 +295,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
