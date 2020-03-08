@@ -16,7 +16,7 @@
 <meta property="og:description" content="1234567891011&#x2F;&#x2F;   创建对象		相当于xml文件中的bean标签@Component(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样@Controller:一般用在表现层      @Service：一般用于业务层@Repository：一般用在持久层① 持久层：采用DAO模式，建立实体类和数据">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-08T11:34:04.000Z">
-<meta property="article:modified_time" content="2020-03-08T13:04:07.461Z">
+<meta property="article:modified_time" content="2020-03-08T13:07:35.024Z">
 <meta property="article:author" content="mshcc">
 <meta name="twitter:card" content="summary">
   
@@ -163,7 +163,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在配置类中的注解</span></span><br><span class="line"><span class="meta">@Configuration</span>:说明该类是配置类--很多情况可以忽略</span><br><span class="line"><span class="meta">@ComponentScans</span>(value | basePackages) :指定创建容器时要扫描的包</span><br><span class="line"><span class="meta">@Bean</span>:把当前方法的返回值作为对象存入spring的ioc容器中   name:id。默认值是当前方法名称     	 使用注解配置方法时，如果方法有参数，则容器中需要有bean对象</span><br><span class="line"><span class="meta">@Import</span>:导入其他配置类</span><br><span class="line"><span class="meta">@PropertySource</span>(value):用于指定properties文件位置        value:指定xml文件的路径和名称</span><br><span class="line">    </span><br><span class="line"><span class="comment">//使用配置类时 用AnnotationConfigApplicationContext创建对象</span></span><br><span class="line">    ApplicationContext applicationContext = <span class="keyword">new</span> AnnotationConfigApplicationContext(SpringConfiguration<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"><span class="comment">//有多个配置类时，可以通过在上面的语句中追加class文件的方式，也可以在主配置类中@Import，也可以在主类的@ComponentScan中加上配置类所在包名。建议Import方法</span></span><br></pre></td></tr></table></figure>
 
 <p>啊啊啊 记不住~~</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解决junit和spring间的问题</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解决junit和spring间的问题</span></span><br><span class="line">如果在测试类中每个测试方法都有大量的重复创建对象代码，则可以把这些代码单独建个方法，并加上<span class="meta">@Before</span>标签</span><br><span class="line">    </span><br><span class="line">或者使用<span class="meta">@Autowired</span>自动装配注解。↓需要在测试类前加上两个注解</span><br><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">ContextConfiguration</span>(<span class="title">classes</span> </span>= SpringConfiguration<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
 
 
       
