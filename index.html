@@ -130,6 +130,373 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JAVA中的容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/">JAVA中的容器</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2020-03-09T13:37:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h6><ul>
+<li><p>可以当作STL模板库中的向量看待</p>
+</li>
+<li><p>是各种集合类的父类(或许是爷爷辈的)</p>
+<ul>
+<li><p>迭代器    日常使用但经常看见名字就会懵逼    就是循环中</p>
+<ul>
+<li><pre><code class="java">ArrayList&lt;Person&gt; persons=<span class="keyword">new</span> ArrayList&lt;&gt;();
+<span class="keyword">for</span>(Person person:persons){
+    <span class="comment">//这么写省略了迭代器的获取的代码</span>
+}
+Iterator it=persons.iterator();
+<span class="keyword">while</span>(it.hasNext()){
+
+}
+&lt;!--￼<span class="number">0</span>--&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h6><p><strong>主要还是一下子记不住辣么多方法</strong></p>
+<ul>
+<li><code>public V put(K key, V value)</code>:  把指定的键与指定的值添加到Map集合中。</li>
+<li><code>public V remove(Object key)</code>: 把指定的键 所对应的键值对元素 在Map集合中删除，返回被删除元素的值。</li>
+<li><code>public V get(Object key)</code> 根据指定的键，在Map集合中获取对应的值。</li>
+<li><code>boolean containsKey(Object key)</code> 判断集合中是否包含指定的键。</li>
+<li><code>public Set&lt;K&gt; keySet()</code>: 获取Map集合中所有的键，存储到Set集合中。</li>
+<li><code>public Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>: 获取到Map集合中所有的键值对对象的集合(Set集合)。</li>
+</ul>
+<p><strong>Entry</strong></p>
+<ul>
+<li>键值对</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
+    <article id="post-JAVA基础之常用API" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/">JAVA基础之常用API</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/" class="archive-article-date">
+  	<time datetime="2020-03-09T13:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="Data-类"><a href="#Data-类" class="headerlink" title="Data 类"></a>Data 类</h6><ul>
+<li><p>创建对象后获取的是从历元到现在的毫秒数</p>
+</li>
+<li><p>靠SimpDateFormat进行格式转换</p>
+<ul>
+<li><p>format方法转换成容易识别的字符串格式</p>
+</li>
+<li><p>parse方法把符合格式的字符串转换成原本的格式</p>
+</li>
+<li><pre><code class="java">Date date=<span class="keyword">new</span> Date();
+DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日HH时mm分ss秒"</span>);
+System.out.println(df.format(date));
+System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28秒"</span>));
+&lt;!--￼<span class="number">0</span>--&gt;</code></pre>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>字段值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>YEAR</td>
+<td>年</td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>月（从0开始，可以+1使用）</td>
+</tr>
+<tr>
+<td>DAY_OF_MONTH</td>
+<td>月中的天（几号）</td>
+</tr>
+<tr>
+<td>HOUR</td>
+<td>时（12小时制）</td>
+</tr>
+<tr>
+<td>HOUR_OF_DAY</td>
+<td>时（24小时制）</td>
+</tr>
+<tr>
+<td>MINUTE</td>
+<td>分</td>
+</tr>
+<tr>
+<td>SECOND</td>
+<td>秒</td>
+</tr>
+<tr>
+<td>DAY_OF_WEEK</td>
+<td>周中的天（周几，周日为1，可以-1使用）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>通过getTime方法可以获取到Data对象</p>
+</li>
+</ul>
+<h6 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h6><ul>
+<li><p>System.currentTimeMillis();获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
+<ul>
+<li>可以用来计算程序耗时</li>
+</ul>
+</li>
+<li><p>arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>参数序号</th>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>src</td>
+<td>Object</td>
+<td>源数组</td>
+</tr>
+<tr>
+<td>2</td>
+<td>srcPos</td>
+<td>int</td>
+<td>源数组索引起始位置</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dest</td>
+<td>Object</td>
+<td>目标数组</td>
+</tr>
+<tr>
+<td>4</td>
+<td>destPos</td>
+<td>int</td>
+<td>目标数组索引起始位置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>length</td>
+<td>int</td>
+<td>复制元素个数</td>
+</tr>
+</tbody></table>
+</li>
+<li><pre><code class="java"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};
+<span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>};
+System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);
+System.out.println(Arrays.toString(dest));
+&lt;!--￼<span class="number">1</span>--&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h6><ul>
+<li>已经不需要再手动完成</li>
+</ul>
+<h6 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h6><ul>
+<li></li>
+<li><pre><code>  修饰符 返回值类型 方法名(参数类型... 形参名){  }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 其实这个书写完全等价与</span><br><span class="line"></span><br><span class="line">-</span><br></pre></td></tr></table></figure>
+  修饰符 返回值类型 方法名(参数类型[] 形参名){  }</code></pre></li>
+<li><p>只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
+    <article id="post-Spring中xml配置文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/08/Spring%E4%B8%ADxml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">Spring中xml配置文件</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/03/08/Spring%E4%B8%ADxml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="archive-article-date">
+  	<time datetime="2020-03-08T13:09:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="spring中的xml配置文件"><a href="#spring中的xml配置文件" class="headerlink" title="spring中的xml配置文件"></a>spring中的xml配置文件</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 约束条件去spring的官方文档里粘贴 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 基本格式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">scope</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">ref</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            	<span class="tag">&lt;<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/08/Spring%E4%B8%ADxml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-Spring中的注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   
   <div class="article-inner">

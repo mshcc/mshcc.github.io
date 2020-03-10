@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 学习ing</title>
+  <title>JAVA基础之常用API | 学习ing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="学习ing">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="Data 类 创建对象后获取的是从历元到现在的毫秒数  靠SimpDateFormat进行格式转换  format方法转换成容易识别的字符串格式  parse方法把符合格式的字符串转换成原本的格式  Date date&#x3D;new Date(); DateFormat df &#x3D; new SimpleDateFormat(&quot;yyyy年MM月dd日HH时mm分ss秒&quot;); System.out.print">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA基础之常用API">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/index.html">
 <meta property="og:site_name" content="学习ing">
+<meta property="og:description" content="Data 类 创建对象后获取的是从历元到现在的毫秒数  靠SimpDateFormat进行格式转换  format方法转换成容易识别的字符串格式  parse方法把符合格式的字符串转换成原本的格式  Date date&#x3D;new Date(); DateFormat df &#x3D; new SimpleDateFormat(&quot;yyyy年MM月dd日HH时mm分ss秒&quot;); System.out.print">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-09T13:05:00.000Z">
+<meta property="article:modified_time" content="2020-03-10T13:15:42.330Z">
 <meta property="article:author" content="mshcc">
 <meta name="twitter:card" content="summary">
   
@@ -128,274 +132,278 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-JAVA基础之常用API" class="article article-type-post " itemscope itemprop="blogPost">
   
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-03-09T13:37:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/">JAVA中的容器</a>
+    <h1 class="article-title" itemprop="name">
+      JAVA基础之常用API
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+        
+        
 <a href="/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/" class="archive-article-date">
   	<time datetime="2020-03-09T13:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/">JAVA基础之常用API</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="Data-类"><a href="#Data-类" class="headerlink" title="Data 类"></a>Data 类</h6><ul>
+<li><p>创建对象后获取的是从历元到现在的毫秒数</p>
+</li>
+<li><p>靠SimpDateFormat进行格式转换</p>
+<ul>
+<li><p>format方法转换成容易识别的字符串格式</p>
+</li>
+<li><p>parse方法把符合格式的字符串转换成原本的格式</p>
+</li>
+<li><pre><code class="java">Date date=<span class="keyword">new</span> Date();
+DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日HH时mm分ss秒"</span>);
+System.out.println(df.format(date));
+System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28秒"</span>));
+&lt;!--￼<span class="number">0</span>--&gt;</code></pre>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>字段值</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>YEAR</td>
+<td>年</td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>月（从0开始，可以+1使用）</td>
+</tr>
+<tr>
+<td>DAY_OF_MONTH</td>
+<td>月中的天（几号）</td>
+</tr>
+<tr>
+<td>HOUR</td>
+<td>时（12小时制）</td>
+</tr>
+<tr>
+<td>HOUR_OF_DAY</td>
+<td>时（24小时制）</td>
+</tr>
+<tr>
+<td>MINUTE</td>
+<td>分</td>
+</tr>
+<tr>
+<td>SECOND</td>
+<td>秒</td>
+</tr>
+<tr>
+<td>DAY_OF_WEEK</td>
+<td>周中的天（周几，周日为1，可以-1使用）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>通过getTime方法可以获取到Data对象</p>
+</li>
+</ul>
+<h6 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h6><ul>
+<li><p>System.currentTimeMillis();获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
+<ul>
+<li>可以用来计算程序耗时</li>
+</ul>
+</li>
+<li><p>arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</p>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>参数序号</th>
+<th>参数名称</th>
+<th>参数类型</th>
+<th>参数含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>src</td>
+<td>Object</td>
+<td>源数组</td>
+</tr>
+<tr>
+<td>2</td>
+<td>srcPos</td>
+<td>int</td>
+<td>源数组索引起始位置</td>
+</tr>
+<tr>
+<td>3</td>
+<td>dest</td>
+<td>Object</td>
+<td>目标数组</td>
+</tr>
+<tr>
+<td>4</td>
+<td>destPos</td>
+<td>int</td>
+<td>目标数组索引起始位置</td>
+</tr>
+<tr>
+<td>5</td>
+<td>length</td>
+<td>int</td>
+<td>复制元素个数</td>
+</tr>
+</tbody></table>
+</li>
+<li><pre><code class="java"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};
+<span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>};
+System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);
+System.out.println(Arrays.toString(dest));
+&lt;!--￼<span class="number">1</span>--&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h6><ul>
+<li>已经不需要再手动完成</li>
+</ul>
+<h6 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h6><ul>
+<li></li>
+<li><pre><code>  修饰符 返回值类型 方法名(参数类型... 形参名){  }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 其实这个书写完全等价与</span><br><span class="line"></span><br><span class="line">-</span><br></pre></td></tr></table></figure>
+  修饰符 返回值类型 方法名(参数类型[] 形参名){  }</code></pre></li>
+<li><p>只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。</p>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/08/Spring%E4%B8%ADxml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2020-03-08T13:09:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JAVA中的容器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/08/Spring%E4%B8%ADxml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Spring中xml配置文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/Spring%E4%B8%ADxml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/">Spring中xml配置文件</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-03-08T11:34:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/">Spring中的注解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/" class="archive-article-date">
-  	<time datetime="2020-03-06T15:31:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/">&#39;小说爬虫/简陋&#39;</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/01/JAVAEE/" class="archive-article-date">
-  	<time datetime="2020-03-01T13:34:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/01/JAVAEE/">JAVAEE</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:39:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">JdbcTemplate 简单用法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/" class="archive-article-date">
-  	<time datetime="2020-01-21T09:29:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">半永久破解(仅19.3.1有效)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/" class="archive-article-date">
-  	<time datetime="2020-01-18T03:46:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/">Django2.2配置MySQL</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -419,8 +427,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
