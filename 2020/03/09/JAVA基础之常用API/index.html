@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JAVA基础之常用API | 学习ing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Data 类 创建对象后获取的是从历元到现在的毫秒数  靠SimpDateFormat进行格式转换  format方法转换成容易识别的字符串格式  parse方法把符合格式的字符串转换成原本的格式  Date date&#x3D;new Date(); DateFormat df &#x3D; new SimpleDateFormat(&quot;yyyy年MM月dd日HH时mm分ss秒&quot;); System.out.print">
+  <meta name="description" content="Data 类 创建对象后获取的是从历元到现在的毫秒数  靠SimpDateFormat进行格式转换  format方法转换成容易识别的字符串格式  parse方法把符合格式的字符串转换成原本的格式     1234Date date&#x3D;new Date();DateFormat df &#x3D; new SimpleDateFormat(&quot;yyyy年MM月dd日HH时mm分ss秒&quot;);System.out.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA基础之常用API">
 <meta property="og:url" content="http://yoursite.com/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/index.html">
 <meta property="og:site_name" content="学习ing">
-<meta property="og:description" content="Data 类 创建对象后获取的是从历元到现在的毫秒数  靠SimpDateFormat进行格式转换  format方法转换成容易识别的字符串格式  parse方法把符合格式的字符串转换成原本的格式  Date date&#x3D;new Date(); DateFormat df &#x3D; new SimpleDateFormat(&quot;yyyy年MM月dd日HH时mm分ss秒&quot;); System.out.print">
+<meta property="og:description" content="Data 类 创建对象后获取的是从历元到现在的毫秒数  靠SimpDateFormat进行格式转换  format方法转换成容易识别的字符串格式  parse方法把符合格式的字符串转换成原本的格式     1234Date date&#x3D;new Date();DateFormat df &#x3D; new SimpleDateFormat(&quot;yyyy年MM月dd日HH时mm分ss秒&quot;);System.out.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-09T13:05:00.000Z">
-<meta property="article:modified_time" content="2020-03-10T13:15:42.330Z">
+<meta property="article:modified_time" content="2020-03-10T14:52:31.552Z">
 <meta property="article:author" content="mshcc">
 <meta name="twitter:card" content="summary">
   
@@ -163,13 +163,21 @@
 </li>
 <li><p>parse方法把符合格式的字符串转换成原本的格式</p>
 </li>
-<li><pre><code class="java">Date date=<span class="keyword">new</span> Date();
-DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日HH时mm分ss秒"</span>);
-System.out.println(df.format(date));
-System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28秒"</span>));
-&lt;!--￼<span class="number">0</span>--&gt;</code></pre>
+</ul>
 </li>
-<li><table>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Date date=<span class="keyword">new</span> Date();</span><br><span class="line">DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日HH时mm分ss秒"</span>);</span><br><span class="line">System.out.println(df.format(date));</span><br><span class="line">System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28秒"</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="Calender类"><a href="#Calender类" class="headerlink" title="Calender类"></a>Calender类</h6><ul>
+<li>日历类，也能拿来获取时间</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar calendar=Calendar.getInstance(); System.out.println(calendar.get(Calendar.YEAR)+<span class="string">"/"</span>+calendar.get(Calendar.MONTH+<span class="number">1</span>)+<span class="string">"/"</span>+calendar.get(Calendar.DAY_OF_MONTH));</span><br></pre></td></tr></table></figure>
+
+
+
+<table>
 <thead>
 <tr>
 <th>字段值</th>
@@ -209,11 +217,8 @@ System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28�
 <td>周中的天（周几，周日为1，可以-1使用）</td>
 </tr>
 </tbody></table>
-</li>
-</ul>
-</li>
-<li><p>通过getTime方法可以获取到Data对象</p>
-</li>
+<ul>
+<li>通过getTime方法可以获取到Data对象</li>
 </ul>
 <h6 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h6><ul>
 <li><p>System.currentTimeMillis();获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
@@ -222,8 +227,7 @@ System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28�
 </ul>
 </li>
 <li><p>arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</p>
-<ul>
-<li><table>
+<table>
 <thead>
 <tr>
 <th>参数序号</th>
@@ -264,26 +268,26 @@ System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28�
 </tr>
 </tbody></table>
 </li>
-<li><pre><code class="java"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};
-<span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>};
-System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);
-System.out.println(Arrays.toString(dest));
-&lt;!--￼<span class="number">1</span>--&gt;
-</code></pre>
-</li>
 </ul>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">System.out.println(Arrays.toString(dest));</span><br></pre></td></tr></table></figure>
+
+<h6 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h6><ul>
+<li>在Java里，String类型的变量不能直接修改，而是重新产生了一个变量存储修改后的结果(加前缀或后缀)，可以通过StringBuilder解决</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"Hello"</span>;</span><br><span class="line">System.out.println(s.hashCode());</span><br><span class="line">s += <span class="string">"World"</span>;</span><br><span class="line">System.out.println(s.hashCode());</span><br><span class="line">StringBuilder st=<span class="keyword">new</span> StringBuilder(<span class="string">"Hello"</span>);</span><br><span class="line">st.append(<span class="string">"World"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
 <h6 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h6><ul>
 <li>已经不需要再手动完成</li>
 </ul>
-<h6 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h6><ul>
-<li></li>
-<li><pre><code>  修饰符 返回值类型 方法名(参数类型... 形参名){  }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 其实这个书写完全等价与</span><br><span class="line"></span><br><span class="line">-</span><br></pre></td></tr></table></figure>
-  修饰符 返回值类型 方法名(参数类型[] 形参名){  }</code></pre></li>
-<li><p>只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。</p>
-</li>
+<h6 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h6><p><code>修饰符 返回值类型 方法名(参数类型... 形参名){  }</code></p>
+<ul>
+<li>其实这个书写完全等价与</li>
+</ul>
+<p><code>修饰符 返回值类型 方法名(参数类型[] 形参名){  }</code></p>
+<ul>
+<li>只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。</li>
 </ul>
 
       

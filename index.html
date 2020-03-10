@@ -157,24 +157,76 @@
 </li>
 <li><p>是各种集合类的父类(或许是爷爷辈的)</p>
 <ul>
-<li><p>迭代器    日常使用但经常看见名字就会懵逼    就是循环中</p>
-<ul>
-<li><pre><code class="java">ArrayList&lt;Person&gt; persons=<span class="keyword">new</span> ArrayList&lt;&gt;();
-<span class="keyword">for</span>(Person person:persons){
-    <span class="comment">//这么写省略了迭代器的获取的代码</span>
-}
-Iterator it=persons.iterator();
-<span class="keyword">while</span>(it.hasNext()){
+<li>迭代器    日常使用但经常看见名字就会懵逼    就是循环中</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Person&gt; persons=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span>(Person person:persons)&#123;</span><br><span class="line"><span class="comment">//这么写省略了迭代器的获取的代码</span></span><br><span class="line">&#125;</span><br><span class="line">Iterator it=persons.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-}
-&lt;!--￼<span class="number">0</span>--&gt;
-</code></pre>
+
+
+<h5 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h5><ul>
+<li>就是定义类或方法时在<code>方法名</code>或<code>类名</code>或<code>接口</code>的后面加上<code>&lt;E&gt;</code><ul>
+<li>E的具体类型在调用类或方法时传入</li>
+</ul>
 </li>
+<li><del>我丢你妈的怎么还有通配符</del><ul>
+<li>&lt;?&gt;<ul>
+<li>这么使用后只能使用objects类中的方法？？！！！  <strong>👈这里</strong></li>
+</ul>
+</li>
+<li>受限通配符<ul>
+<li>类型名称 &lt;? extends 类 &gt; 对象名称        只能接收该类型及其子类</li>
+<li>类型名称 &lt;? super 类 &gt; 对象名称        只能接收该类型及其父类</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h6 id="List"><a href="#List" class="headerlink" title="List"></a>List</h6><ul>
+<li><p>双向链表</p>
+<ul>
+<li>add方法==addLast方法        push=addFirst:顾名思义，加在链首</li>
+<li>get方法继承了List的  还有getFirst、getLast</li>
+<li>pop=removeFirst    还有removeLast方法</li>
+</ul>
+</li>
+<li><p>主要是一下子记不住这么多方法~~</p>
+</li>
+</ul>
+<h6 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h6><ul>
+<li><p><strong>HashSet的原理还不是很懂</strong>        待解决~~</p>
+</li>
+<li><p>无序</p>
+</li>
+<li><p>要想保证元素唯一，需要重写equal方法，不同的有相同属性的对象有不同的地址值，object自带的equal方法不能很好的解决这个问题</p>
+</li>
+<li><p>LinkedHashSet  HashSet的子类，解决了无序的问题</p>
+</li>
+</ul>
+<h6 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h6><ul>
+<li><p>集合的工具类</p>
+</li>
+<li><p>下面几个是常用的函数</p>
+</li>
+<li><p><code>public static &lt;T&gt; boolean addAll(Collection&lt;T&gt; c, T... elements)</code>:往集合中添加一些元素。</p>
+</li>
+<li><p><code>public static void shuffle(List&lt;?&gt; list) 打乱顺序</code>:打乱集合顺序。</p>
+</li>
+<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list)</code>:将集合中元素按照默认规则排序。</p>
+</li>
+<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list，Comparator&lt;? super T&gt; )</code>:将集合中元素按照指定规则排序。</p>
+<ul>
+<li>显而易见,只有addAll可以对所有集合类型操作,其他只能操作List</li>
+</ul>
+</li>
+<li><p><strong>Comparator</strong> 实现排序时的规则</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(arrayList, <span class="keyword">new</span> Comparator&lt;Person&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Person o1, Person o2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.getAge()-o2.getAge();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
 <h6 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h6><p><strong>主要还是一下子记不住辣么多方法</strong></p>
 <ul>
 <li><code>public V put(K key, V value)</code>:  把指定的键与指定的值添加到Map集合中。</li>
@@ -263,13 +315,21 @@ Iterator it=persons.iterator();
 </li>
 <li><p>parse方法把符合格式的字符串转换成原本的格式</p>
 </li>
-<li><pre><code class="java">Date date=<span class="keyword">new</span> Date();
-DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日HH时mm分ss秒"</span>);
-System.out.println(df.format(date));
-System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28秒"</span>));
-&lt;!--￼<span class="number">0</span>--&gt;</code></pre>
+</ul>
 </li>
-<li><table>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Date date=<span class="keyword">new</span> Date();</span><br><span class="line">DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日HH时mm分ss秒"</span>);</span><br><span class="line">System.out.println(df.format(date));</span><br><span class="line">System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28秒"</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h6 id="Calender类"><a href="#Calender类" class="headerlink" title="Calender类"></a>Calender类</h6><ul>
+<li>日历类，也能拿来获取时间</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar calendar=Calendar.getInstance(); System.out.println(calendar.get(Calendar.YEAR)+<span class="string">"/"</span>+calendar.get(Calendar.MONTH+<span class="number">1</span>)+<span class="string">"/"</span>+calendar.get(Calendar.DAY_OF_MONTH));</span><br></pre></td></tr></table></figure>
+
+
+
+<table>
 <thead>
 <tr>
 <th>字段值</th>
@@ -309,11 +369,8 @@ System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28�
 <td>周中的天（周几，周日为1，可以-1使用）</td>
 </tr>
 </tbody></table>
-</li>
-</ul>
-</li>
-<li><p>通过getTime方法可以获取到Data对象</p>
-</li>
+<ul>
+<li>通过getTime方法可以获取到Data对象</li>
 </ul>
 <h6 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h6><ul>
 <li><p>System.currentTimeMillis();获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
@@ -322,8 +379,7 @@ System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28�
 </ul>
 </li>
 <li><p>arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</p>
-<ul>
-<li><table>
+<table>
 <thead>
 <tr>
 <th>参数序号</th>
@@ -364,26 +420,26 @@ System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28�
 </tr>
 </tbody></table>
 </li>
-<li><pre><code class="java"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};
-<span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>};
-System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);
-System.out.println(Arrays.toString(dest));
-&lt;!--￼<span class="number">1</span>--&gt;
-</code></pre>
-</li>
 </ul>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">System.out.println(Arrays.toString(dest));</span><br></pre></td></tr></table></figure>
+
+<h6 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h6><ul>
+<li>在Java里，String类型的变量不能直接修改，而是重新产生了一个变量存储修改后的结果(加前缀或后缀)，可以通过StringBuilder解决</li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"Hello"</span>;</span><br><span class="line">System.out.println(s.hashCode());</span><br><span class="line">s += <span class="string">"World"</span>;</span><br><span class="line">System.out.println(s.hashCode());</span><br><span class="line">StringBuilder st=<span class="keyword">new</span> StringBuilder(<span class="string">"Hello"</span>);</span><br><span class="line">st.append(<span class="string">"World"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
 <h6 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h6><ul>
 <li>已经不需要再手动完成</li>
 </ul>
-<h6 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h6><ul>
-<li></li>
-<li><pre><code>  修饰符 返回值类型 方法名(参数类型... 形参名){  }
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 其实这个书写完全等价与</span><br><span class="line"></span><br><span class="line">-</span><br></pre></td></tr></table></figure>
-  修饰符 返回值类型 方法名(参数类型[] 形参名){  }</code></pre></li>
-<li><p>只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。</p>
-</li>
+<h6 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h6><p><code>修饰符 返回值类型 方法名(参数类型... 形参名){  }</code></p>
+<ul>
+<li>其实这个书写完全等价与</li>
+</ul>
+<p><code>修饰符 返回值类型 方法名(参数类型[] 形参名){  }</code></p>
+<ul>
+<li>只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。</li>
 </ul>
 
       

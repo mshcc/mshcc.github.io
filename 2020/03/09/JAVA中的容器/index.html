@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JAVA中的容器 | 学习ing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Collection 可以当作STL模板库中的向量看待  是各种集合类的父类(或许是爷爷辈的)  迭代器    日常使用但经常看见名字就会懵逼    就是循环中  ArrayList&lt;Person&gt; persons&#x3D;new ArrayList&lt;&gt;(); for(Person person:persons){     &#x2F;&#x2F;这么写省略了迭代器的获取的代码 } Iterator">
+  <meta name="description" content="Collection 可以当作STL模板库中的向量看待  是各种集合类的父类(或许是爷爷辈的)  迭代器    日常使用但经常看见名字就会懵逼    就是循环中    123456ArrayList&lt;Person&gt; persons&#x3D;new ArrayList&lt;&gt;();for(Person person:persons)&amp;#123;&#x2F;&#x2F;这么写省略了迭代器的获取的代码&amp;#125">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA中的容器">
 <meta property="og:url" content="http://yoursite.com/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="学习ing">
-<meta property="og:description" content="Collection 可以当作STL模板库中的向量看待  是各种集合类的父类(或许是爷爷辈的)  迭代器    日常使用但经常看见名字就会懵逼    就是循环中  ArrayList&lt;Person&gt; persons&#x3D;new ArrayList&lt;&gt;(); for(Person person:persons){     &#x2F;&#x2F;这么写省略了迭代器的获取的代码 } Iterator">
+<meta property="og:description" content="Collection 可以当作STL模板库中的向量看待  是各种集合类的父类(或许是爷爷辈的)  迭代器    日常使用但经常看见名字就会懵逼    就是循环中    123456ArrayList&lt;Person&gt; persons&#x3D;new ArrayList&lt;&gt;();for(Person person:persons)&amp;#123;&#x2F;&#x2F;这么写省略了迭代器的获取的代码&amp;#125">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-09T13:37:26.000Z">
-<meta property="article:modified_time" content="2020-03-10T14:40:53.356Z">
+<meta property="article:modified_time" content="2020-03-10T14:50:05.220Z">
 <meta property="article:author" content="mshcc">
 <meta name="twitter:card" content="summary">
   
@@ -159,24 +159,76 @@
 </li>
 <li><p>是各种集合类的父类(或许是爷爷辈的)</p>
 <ul>
-<li><p>迭代器    日常使用但经常看见名字就会懵逼    就是循环中</p>
-<ul>
-<li><pre><code class="java">ArrayList&lt;Person&gt; persons=<span class="keyword">new</span> ArrayList&lt;&gt;();
-<span class="keyword">for</span>(Person person:persons){
-    <span class="comment">//这么写省略了迭代器的获取的代码</span>
-}
-Iterator it=persons.iterator();
-<span class="keyword">while</span>(it.hasNext()){
+<li>迭代器    日常使用但经常看见名字就会懵逼    就是循环中</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Person&gt; persons=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span>(Person person:persons)&#123;</span><br><span class="line"><span class="comment">//这么写省略了迭代器的获取的代码</span></span><br><span class="line">&#125;</span><br><span class="line">Iterator it=persons.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-}
-&lt;!--￼<span class="number">0</span>--&gt;
-</code></pre>
+
+
+<h5 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h5><ul>
+<li>就是定义类或方法时在<code>方法名</code>或<code>类名</code>或<code>接口</code>的后面加上<code>&lt;E&gt;</code><ul>
+<li>E的具体类型在调用类或方法时传入</li>
+</ul>
 </li>
+<li><del>我丢你妈的怎么还有通配符</del><ul>
+<li>&lt;?&gt;<ul>
+<li>这么使用后只能使用objects类中的方法？？！！！  <strong>👈这里</strong></li>
+</ul>
+</li>
+<li>受限通配符<ul>
+<li>类型名称 &lt;? extends 类 &gt; 对象名称        只能接收该类型及其子类</li>
+<li>类型名称 &lt;? super 类 &gt; 对象名称        只能接收该类型及其父类</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
+<h6 id="List"><a href="#List" class="headerlink" title="List"></a>List</h6><ul>
+<li><p>双向链表</p>
+<ul>
+<li>add方法==addLast方法        push=addFirst:顾名思义，加在链首</li>
+<li>get方法继承了List的  还有getFirst、getLast</li>
+<li>pop=removeFirst    还有removeLast方法</li>
+</ul>
+</li>
+<li><p>主要是一下子记不住这么多方法~~</p>
+</li>
+</ul>
+<h6 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h6><ul>
+<li><p><strong>HashSet的原理还不是很懂</strong>        待解决~~</p>
+</li>
+<li><p>无序</p>
+</li>
+<li><p>要想保证元素唯一，需要重写equal方法，不同的有相同属性的对象有不同的地址值，object自带的equal方法不能很好的解决这个问题</p>
+</li>
+<li><p>LinkedHashSet  HashSet的子类，解决了无序的问题</p>
+</li>
+</ul>
+<h6 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h6><ul>
+<li><p>集合的工具类</p>
+</li>
+<li><p>下面几个是常用的函数</p>
+</li>
+<li><p><code>public static &lt;T&gt; boolean addAll(Collection&lt;T&gt; c, T... elements)</code>:往集合中添加一些元素。</p>
+</li>
+<li><p><code>public static void shuffle(List&lt;?&gt; list) 打乱顺序</code>:打乱集合顺序。</p>
+</li>
+<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list)</code>:将集合中元素按照默认规则排序。</p>
+</li>
+<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list，Comparator&lt;? super T&gt; )</code>:将集合中元素按照指定规则排序。</p>
+<ul>
+<li>显而易见,只有addAll可以对所有集合类型操作,其他只能操作List</li>
+</ul>
+</li>
+<li><p><strong>Comparator</strong> 实现排序时的规则</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(arrayList, <span class="keyword">new</span> Comparator&lt;Person&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Person o1, Person o2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.getAge()-o2.getAge();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+
 <h6 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h6><p><strong>主要还是一下子记不住辣么多方法</strong></p>
 <ul>
 <li><code>public V put(K key, V value)</code>:  把指定的键与指定的值添加到Map集合中。</li>
