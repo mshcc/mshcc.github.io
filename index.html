@@ -161,86 +161,9 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Person&gt; persons=<span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span>(Person person:persons)&#123;</span><br><span class="line"><span class="comment">//这么写省略了迭代器的获取的代码</span></span><br><span class="line">&#125;</span><br><span class="line">Iterator it=persons.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h5><ul>
-<li>就是定义类或方法时在<code>方法名</code>或<code>类名</code>或<code>接口</code>的后面加上<code>&lt;E&gt;</code><ul>
-<li>E的具体类型在调用类或方法时传入</li>
-</ul>
-</li>
-<li><del>我丢你妈的怎么还有通配符</del><ul>
-<li>&lt;?&gt;<ul>
-<li>这么使用后只能使用objects类中的方法？？！！！  <strong>👈这里</strong></li>
-</ul>
-</li>
-<li>受限通配符<ul>
-<li>类型名称 &lt;? extends 类 &gt; 对象名称        只能接收该类型及其子类</li>
-<li>类型名称 &lt;? super 类 &gt; 对象名称        只能接收该类型及其父类</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h6 id="List"><a href="#List" class="headerlink" title="List"></a>List</h6><ul>
-<li><p>双向链表</p>
-<ul>
-<li>add方法==addLast方法        push=addFirst:顾名思义，加在链首</li>
-<li>get方法继承了List的  还有getFirst、getLast</li>
-<li>pop=removeFirst    还有removeLast方法</li>
-</ul>
-</li>
-<li><p>主要是一下子记不住这么多方法~~</p>
-</li>
-</ul>
-<h6 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h6><ul>
-<li><p><strong>HashSet的原理还不是很懂</strong>        待解决~~</p>
-</li>
-<li><p>无序</p>
-</li>
-<li><p>要想保证元素唯一，需要重写equal方法，不同的有相同属性的对象有不同的地址值，object自带的equal方法不能很好的解决这个问题</p>
-</li>
-<li><p>LinkedHashSet  HashSet的子类，解决了无序的问题</p>
-</li>
-</ul>
-<h6 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h6><ul>
-<li><p>集合的工具类</p>
-</li>
-<li><p>下面几个是常用的函数</p>
-</li>
-<li><p><code>public static &lt;T&gt; boolean addAll(Collection&lt;T&gt; c, T... elements)</code>:往集合中添加一些元素。</p>
-</li>
-<li><p><code>public static void shuffle(List&lt;?&gt; list) 打乱顺序</code>:打乱集合顺序。</p>
-</li>
-<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list)</code>:将集合中元素按照默认规则排序。</p>
-</li>
-<li><p><code>public static &lt;T&gt; void sort(List&lt;T&gt; list，Comparator&lt;? super T&gt; )</code>:将集合中元素按照指定规则排序。</p>
-<ul>
-<li>显而易见,只有addAll可以对所有集合类型操作,其他只能操作List</li>
-</ul>
-</li>
-<li><p><strong>Comparator</strong> 实现排序时的规则</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(arrayList, <span class="keyword">new</span> Comparator&lt;Person&gt;() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Person o1, Person o2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> o1.getAge()-o2.getAge();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-
-
-<h6 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h6><p><strong>主要还是一下子记不住辣么多方法</strong></p>
-<ul>
-<li><code>public V put(K key, V value)</code>:  把指定的键与指定的值添加到Map集合中。</li>
-<li><code>public V remove(Object key)</code>: 把指定的键 所对应的键值对元素 在Map集合中删除，返回被删除元素的值。</li>
-<li><code>public V get(Object key)</code> 根据指定的键，在Map集合中获取对应的值。</li>
-<li><code>boolean containsKey(Object key)</code> 判断集合中是否包含指定的键。</li>
-<li><code>public Set&lt;K&gt; keySet()</code>: 获取Map集合中所有的键，存储到Set集合中。</li>
-<li><code>public Set&lt;Map.Entry&lt;K,V&gt;&gt; entrySet()</code>: 获取到Map集合中所有的键值对对象的集合(Set集合)。</li>
-</ul>
-<p><strong>Entry</strong></p>
-<ul>
-<li>键值对</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2020/03/09/JAVA%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8/#more">more >></a>
+        
       
 
       
@@ -311,137 +234,15 @@
 </li>
 <li><p>靠SimpDateFormat进行格式转换</p>
 <ul>
-<li><p>format方法转换成容易识别的字符串格式</p>
+<li>format方法转换成容易识别的字符串格式</li>
+</ul>
 </li>
 <li><p>parse方法把符合格式的字符串转换成原本的格式</p>
 </li>
 </ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Date date=<span class="keyword">new</span> Date();</span><br><span class="line">DateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日HH时mm分ss秒"</span>);</span><br><span class="line">System.out.println(df.format(date));</span><br><span class="line">System.out.println(df.parse(<span class="string">"2020年03月09日21时02分28秒"</span>));</span><br></pre></td></tr></table></figure>
-
-
-
-<h6 id="Calender类"><a href="#Calender类" class="headerlink" title="Calender类"></a>Calender类</h6><ul>
-<li>日历类，也能拿来获取时间</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Calendar calendar=Calendar.getInstance(); System.out.println(calendar.get(Calendar.YEAR)+<span class="string">"/"</span>+calendar.get(Calendar.MONTH+<span class="number">1</span>)+<span class="string">"/"</span>+calendar.get(Calendar.DAY_OF_MONTH));</span><br></pre></td></tr></table></figure>
-
-
-
-<table>
-<thead>
-<tr>
-<th>字段值</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>YEAR</td>
-<td>年</td>
-</tr>
-<tr>
-<td>MONTH</td>
-<td>月（从0开始，可以+1使用）</td>
-</tr>
-<tr>
-<td>DAY_OF_MONTH</td>
-<td>月中的天（几号）</td>
-</tr>
-<tr>
-<td>HOUR</td>
-<td>时（12小时制）</td>
-</tr>
-<tr>
-<td>HOUR_OF_DAY</td>
-<td>时（24小时制）</td>
-</tr>
-<tr>
-<td>MINUTE</td>
-<td>分</td>
-</tr>
-<tr>
-<td>SECOND</td>
-<td>秒</td>
-</tr>
-<tr>
-<td>DAY_OF_WEEK</td>
-<td>周中的天（周几，周日为1，可以-1使用）</td>
-</tr>
-</tbody></table>
-<ul>
-<li>通过getTime方法可以获取到Data对象</li>
-</ul>
-<h6 id="System类"><a href="#System类" class="headerlink" title="System类"></a>System类</h6><ul>
-<li><p>System.currentTimeMillis();获取当前系统时间与1970年01月01日00:00点之间的毫秒差值</p>
-<ul>
-<li>可以用来计算程序耗时</li>
-</ul>
-</li>
-<li><p>arraycopy(Object src, int srcPos, Object dest, int destPos, int length)</p>
-<table>
-<thead>
-<tr>
-<th>参数序号</th>
-<th>参数名称</th>
-<th>参数类型</th>
-<th>参数含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>src</td>
-<td>Object</td>
-<td>源数组</td>
-</tr>
-<tr>
-<td>2</td>
-<td>srcPos</td>
-<td>int</td>
-<td>源数组索引起始位置</td>
-</tr>
-<tr>
-<td>3</td>
-<td>dest</td>
-<td>Object</td>
-<td>目标数组</td>
-</tr>
-<tr>
-<td>4</td>
-<td>destPos</td>
-<td>int</td>
-<td>目标数组索引起始位置</td>
-</tr>
-<tr>
-<td>5</td>
-<td>length</td>
-<td>int</td>
-<td>复制元素个数</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] src = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"><span class="keyword">int</span>[] dest = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line">System.arraycopy( src, <span class="number">0</span>, dest, <span class="number">0</span>, <span class="number">3</span>);</span><br><span class="line">System.out.println(Arrays.toString(dest));</span><br></pre></td></tr></table></figure>
-
-<h6 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h6><ul>
-<li>在Java里，String类型的变量不能直接修改，而是重新产生了一个变量存储修改后的结果(加前缀或后缀)，可以通过StringBuilder解决</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">"Hello"</span>;</span><br><span class="line">System.out.println(s.hashCode());</span><br><span class="line">s += <span class="string">"World"</span>;</span><br><span class="line">System.out.println(s.hashCode());</span><br><span class="line">StringBuilder st=<span class="keyword">new</span> StringBuilder(<span class="string">"Hello"</span>);</span><br><span class="line">st.append(<span class="string">"World"</span>);</span><br></pre></td></tr></table></figure>
-
-
-
-<h6 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h6><ul>
-<li>已经不需要再手动完成</li>
-</ul>
-<h6 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h6><p><code>修饰符 返回值类型 方法名(参数类型... 形参名){  }</code></p>
-<ul>
-<li>其实这个书写完全等价与</li>
-</ul>
-<p><code>修饰符 返回值类型 方法名(参数类型[] 形参名){  }</code></p>
-<ul>
-<li>只是后面这种定义，在调用时必须传递数组，而前者可以直接传递数据即可。</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2020/03/09/JAVA%E5%9F%BA%E7%A1%80%E4%B9%8B%E5%B8%B8%E7%94%A8API/#more">more >></a>
+        
       
 
       
@@ -507,9 +308,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="spring中的xml配置文件"><a href="#spring中的xml配置文件" class="headerlink" title="spring中的xml配置文件"></a>spring中的xml配置文件</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 约束条件去spring的官方文档里粘贴 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 基本格式 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">class</span>=<span class="string">""</span> <span class="attr">scope</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">""</span> <span class="attr">ref</span>=<span class="string">""</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">            	<span class="tag">&lt;<span class="name">value</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
+        <h5 id="spring中的xml配置文件"><a href="#spring中的xml配置文件" class="headerlink" title="spring中的xml配置文件"></a>spring中的xml配置文件</h5>
+        
+          <a class="article-more-a" href="/2020/03/08/Spring%E4%B8%ADxml%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6/#more">more >></a>
+        
       
 
       
@@ -575,18 +377,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   创建对象		相当于xml文件中的bean标签</span></span><br><span class="line"><span class="meta">@Component</span>(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样</span><br><span class="line"><span class="meta">@Controller</span>:一般用在表现层      </span><br><span class="line"><span class="meta">@Service</span>：一般用于业务层</span><br><span class="line"><span class="meta">@Repository</span>：一般用在持久层</span><br><span class="line">① 持久层：采用DAO模式，建立实体类和数据库表映射（ORM映射）。也就是哪个类对应哪个表，哪个属性对应哪个列。持久层的目的就是，完成对象数据和关系数据的转换。具体的实现方法。</span><br><span class="line">② 业务层：采用事务脚本模式。将一个业务中所有的操作封装成一个方法，同时保证方法中所有的数据库更新操作，即保证同时成功或同时失败。避免部分成功部分失败引起的数据混乱操作。对持久层的封装调用。</span><br><span class="line">③ 表现层：采用MVC模式。<span class="comment">//暂不理解</span></span><br><span class="line">    M称为模型，也就是实体类。用于数据的封装和数据的传输。</span><br><span class="line">    V为视图，也就是GUI组件，用于数据的展示。</span><br><span class="line">    C为控制，也就是事件，用于流程的控制</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  注入数据	相当于xml文件中bean标签中的property标签</span></span><br><span class="line"><span class="meta">@Autowired</span> :自动按值的类型注入，只要容器中有唯一一个bean对象和要注入的变量类型匹配，就可以注入成功，没有或者多个会报错。多个时，如果变量名称和唯一一个bean保持一致，注入成功     在变量或者方法上注释。</span><br><span class="line"><span class="meta">@Qualifier</span>(value) :在按照类型基础上再按照名称注入。给类成员注入时不能单独使用，给方法参数注入时可以.value:用于指定注入的bean的id</span><br><span class="line"><span class="meta">@Resource</span>(name):name:用于指定bean的id，可以单独使用</span><br><span class="line">↑以上三个只能注入bean类型       →集合类型智能通过xml文件注入</span><br><span class="line"><span class="meta">@Value</span>(value):用于注入基本类型和String类型。</span><br><span class="line">    value:用于指定数据的值，可以使用Spring的SpEl    spring中的el表达式   $&#123;表达式&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//改变作用范围	相当于bean标签中scope属性</span></span><br><span class="line"><span class="meta">@Scope</span>(value):用于指定范围的取值。单例、多例等    singleto、prototype</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在配置类中的注解</span></span><br><span class="line"><span class="meta">@Configuration</span>:说明该类是配置类--很多情况可以忽略</span><br><span class="line"><span class="meta">@ComponentScans</span>(value | basePackages) :指定创建容器时要扫描的包</span><br><span class="line"><span class="meta">@Bean</span>:把当前方法的返回值作为对象存入spring的ioc容器中   name:id。默认值是当前方法名称     	 使用注解配置方法时，如果方法有参数，则容器中需要有bean对象</span><br><span class="line"><span class="meta">@Import</span>:导入其他配置类</span><br><span class="line"><span class="meta">@PropertySource</span>(value):用于指定properties文件位置        value:指定xml文件的路径和名称</span><br><span class="line">    </span><br><span class="line"><span class="comment">//使用配置类时 用AnnotationConfigApplicationContext创建对象</span></span><br><span class="line">    ApplicationContext applicationContext = <span class="keyword">new</span> AnnotationConfigApplicationContext(SpringConfiguration<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"><span class="comment">//有多个配置类时，可以通过在上面的语句中追加class文件的方式，也可以在主配置类中@Import，也可以在主类的@ComponentScan中加上配置类所在包名。建议Import方法</span></span><br></pre></td></tr></table></figure>
-
-<p>啊啊啊 记不住~~</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解决junit和spring间的问题</span></span><br><span class="line">如果在测试类中每个测试方法都有大量的重复创建对象代码，则可以把这些代码单独建个方法，并加上<span class="meta">@Before</span>标签</span><br><span class="line">    </span><br><span class="line">或者使用<span class="meta">@Autowired</span>自动装配注解。↓需要在测试类前加上两个注解</span><br><span class="line"><span class="meta">@RunWith</span>(SpringJUnit4ClassRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">ContextConfiguration</span>(<span class="title">classes</span> </span>= SpringConfiguration<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
-
-
+        <p>各种注解看的头疼</p>
+        
+          <a class="article-more-a" href="/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/#more">more >></a>
+        
       
 
       
@@ -652,9 +446,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="爬虫初窥"><a href="#爬虫初窥" class="headerlink" title="爬虫初窥"></a>爬虫初窥</h3><h6 id="用爬虫写了个简单爬取小说的样例"><a href="#用爬虫写了个简单爬取小说的样例" class="headerlink" title="用爬虫写了个简单爬取小说的样例"></a>用爬虫写了个简单爬取小说的样例</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment">#爬取小说《三寸人间》</span></span><br><span class="line">sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">'utf8'</span>)</span><br><span class="line">baseUrl=<span class="string">'http://www.ddxsku.com/'</span><span class="comment">#对于该网的小说，只要改一下首页就能继续用</span></span><br><span class="line">firstPage=<span class="string">"http://www.ddxsku.com/files/article/html/0/43/3615671.html"</span></span><br><span class="line">saveFile=<span class="string">'数据采集及处理\三寸人间.txt'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">GetText</span><span class="params">(ur)</span>:</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        html=requests.get(ur).content.decode(<span class="string">'utf8'</span>)</span><br><span class="line">        title=re.findall(<span class="string">r'三寸人间&lt;/a&gt;&lt;/dt&gt;&lt;dd&gt;&lt;h1&gt;(.*?)&lt;/h1&gt;&lt;/dd&gt;'</span>,html,re.S)[<span class="number">0</span>]</span><br><span class="line">        print(title)</span><br><span class="line">        body=re.findall(<span class="string">r'&lt;dd id="contents"&gt;(.*?)&lt;/dd&gt;'</span>,html,re.S)[<span class="number">0</span>]</span><br><span class="line">        body=<span class="string">'&lt;br /&gt;'</span>+body</span><br><span class="line">        texts=re.findall(<span class="string">r'&lt;br /&gt;(.*?)&lt;br /&gt;'</span>,body,re.S)</span><br><span class="line">        text=<span class="string">''</span></span><br><span class="line">        <span class="keyword">for</span> tex <span class="keyword">in</span> texts:</span><br><span class="line">            tx=tex.replace(<span class="string">"&amp;nbsp;&amp;nbsp;"</span>,<span class="string">' '</span>).replace(<span class="string">"&amp;nbsp;"</span>,<span class="string">''</span>).replace(<span class="string">'\r'</span>,<span class="string">''</span>).replace(<span class="string">'﻿'</span>,<span class="string">''</span>)</span><br><span class="line">            text+=tx</span><br><span class="line">        SavePage(title+text)</span><br><span class="line">        nextPage=re.findall(<span class="string">r'返回目录&lt;/a&gt;&lt;a href="(.*?)"&gt;下一页&lt;/a&gt;'</span>,html,re.S)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> nextPage:</span><br><span class="line">            GetText(baseUrl+nextPage)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        print(<span class="string">"Error"</span>)</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">SavePage</span><span class="params">(zj)</span>:</span></span><br><span class="line">    <span class="keyword">with</span> open(saveFile,<span class="string">'a'</span>,encoding=<span class="string">'utf8'</span>)<span class="keyword">as</span> w:</span><br><span class="line">        w.write(zj)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    GetText(firstPage)</span><br></pre></td></tr></table></figure>
-
-
+        <h3 id="爬虫初窥"><a href="#爬虫初窥" class="headerlink" title="爬虫初窥"></a>爬虫初窥</h3><h6 id="用爬虫写了个简单爬取小说的样例"><a href="#用爬虫写了个简单爬取小说的样例" class="headerlink" title="用爬虫写了个简单爬取小说的样例"></a>用爬虫写了个简单爬取小说的样例</h6>
+        
+          <a class="article-more-a" href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/#more">more >></a>
+        
       
 
       
@@ -723,12 +518,9 @@
         <h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//TODO 设置状态码302         </span></span><br><span class="line">        resp.setStatus(<span class="number">302</span>);</span><br><span class="line"><span class="comment">//设置响应头</span></span><br><span class="line">        resp.setHeader(<span class="string">"location"</span>,<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//也可以	</span></span><br><span class="line">        resp.sendRedirect(<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//  重定向里的参数如果没有 以/开头，就访问相对路径，否则访问绝对路径(端口后跟上参数)</span></span><br><span class="line"><span class="comment">//可以获取相应的项目路径再加上需要的路径构成绝对路径</span></span><br><span class="line">        String contextPath = req.getContextPath();</span><br><span class="line">        resp.sendRedirect(contextPath+<span class="string">"/redirect002"</span>);</span><br></pre></td></tr></table></figure>
 
 <p><del>不明白为什么从浏览器访问服务器，重定向时需要绝对路径，暂时没发现相对路径会出错</del></p>
-<h2 id="手撸验证码"><a href="#手撸验证码" class="headerlink" title="手撸验证码"></a>手撸验证码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> String str=<span class="string">"ABCDEFGHIGKLMNPQRSTUVWXYZabcdefghigklmnopqrstuvwxyz0123456789"</span>;</span><br><span class="line">        <span class="comment">//创建图片对象</span></span><br><span class="line">        <span class="keyword">int</span> height=<span class="number">50</span>;</span><br><span class="line">        <span class="keyword">int</span> width=<span class="number">100</span>;</span><br><span class="line">        BufferedImage image=<span class="keyword">new</span> BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);</span><br><span class="line">        <span class="comment">//弄成验证码的亚子</span></span><br><span class="line">        Graphics graphics = image.getGraphics();<span class="comment">//画笔对象</span></span><br><span class="line">        graphics.setColor(Color.cyan);</span><br><span class="line">        graphics.fillRect(<span class="number">0</span>,<span class="number">0</span>,width,height);<span class="comment">//填充</span></span><br><span class="line">        graphics.setColor(Color.black);</span><br><span class="line">        graphics.drawRect(<span class="number">0</span>,<span class="number">0</span>,width-<span class="number">1</span>,height-<span class="number">1</span>);<span class="comment">//边框</span></span><br><span class="line"></span><br><span class="line">        graphics.setColor(Color.black);<span class="comment">//内容</span></span><br><span class="line">        Random ran=<span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">4</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> anInt = ran.nextInt(str.length());</span><br><span class="line">            <span class="keyword">char</span> ch = str.charAt(anInt);</span><br><span class="line">            graphics.drawString(ch+<span class="string">""</span>,width/<span class="number">5</span>*i,height/<span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        添加干扰</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=ran.nextInt(<span class="number">10</span>)*<span class="number">10</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x1=ran.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> x2=ran.nextInt(width);</span><br><span class="line">            <span class="keyword">int</span> y1=ran.nextInt(height);</span><br><span class="line">            <span class="keyword">int</span> y2=ran.nextInt(height);</span><br><span class="line">            graphics.drawLine(x1,y1,x2,y2);</span><br><span class="line">        &#125;</span><br><span class="line">        ImageIO.write(image,<span class="string">"jpg"</span>,resp.getOutputStream());</span><br></pre></td></tr></table></figure>
-
-
-
-<p>持续更新~</p>
-
+        
+          <a class="article-more-a" href="/2020/03/01/JAVAEE/#more">more >></a>
+        
       
 
       
@@ -794,11 +586,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JdbcTemplate-简单用法"><a href="#JdbcTemplate-简单用法" class="headerlink" title="JdbcTemplate 简单用法"></a>JdbcTemplate 简单用法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;定义sql 例如</span><br><span class="line">String sql &#x3D; &quot;select * from user where username&#x3D;? and password &#x3D;?;&quot;;</span><br><span class="line">&#x2F;&#x2F;简单校验用户名和密码是否匹配</span><br><span class="line">&#x2F;&#x2F;创建User</span><br><span class="line">User Loginer &#x3D; new User();</span><br><span class="line">Loginer.setUsername(&quot;lisi&quot;);</span><br><span class="line">Loginer.setPassword(&quot;lisi123&quot;);</span><br><span class="line">Properties pro &#x3D; new Properties();</span><br><span class="line">pro.load(logintest.class.getClassLoader().getResourceAsStream(&quot;droid.properties&quot;));</span><br><span class="line">&#x2F;&#x2F;直接打印查询结果或者提示错误</span><br><span class="line">try&#123;</span><br><span class="line">    System.out.println(new JdbcTemplate(DruidDataSourceFactory.createDataSource(pro)).</span><br><span class="line">            queryForObject(sql, new BeanPropertyRowMapper&lt;User&gt;(User.class),</span><br><span class="line">                    Loginer.getUsername(), Loginer.getPassword()));</span><br><span class="line">&#125;catch (DataAccessException e)&#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">    System.out.println(&quot;账号或密码错误&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//自定义的User类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> username;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;<span class="keyword">this</span>.username = username;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getPassword</span><span class="params">()</span> </span>&#123;<span class="keyword">return</span> password;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPassword</span><span class="params">(String password)</span> </span>&#123;<span class="keyword">this</span>.password = password;&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"User&#123;"</span> +<span class="string">"username='"</span> + username + <span class="string">'\''</span> +<span class="string">", password='"</span> + password + <span class="string">'\''</span> +<span class="string">'&#125;'</span>;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        <h1 id="JdbcTemplate-简单用法"><a href="#JdbcTemplate-简单用法" class="headerlink" title="JdbcTemplate 简单用法"></a>JdbcTemplate 简单用法</h1>
+        
+          <a class="article-more-a" href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/#more">more >></a>
+        
       
 
       
@@ -865,16 +656,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="下载破解包"><a href="#下载破解包" class="headerlink" title="下载破解包"></a>下载破解包</h1><p><a href="https://pan.baidu.com/s/1eE9Hhuizq7quPZ1HCNNWlQ" target="_blank" rel="noopener">百度网盘</a></p>
-<h1 id="下载需要的jetbrain工具"><a href="#下载需要的jetbrain工具" class="headerlink" title="下载需要的jetbrain工具"></a>下载需要的jetbrain工具</h1><p><del><a href="https://www.jetbrains.com/" target="_blank" rel="noopener">官网</a>已近无法破解最新版本</del></p>
-<p><a href="https://pan.baidu.com/s/1zs8qW_Utg1b3aMT0xt7NYA" target="_blank" rel="noopener">GoLand</a>    提取码：e9ws</p>
-<p><a href="https://pan.baidu.com/s/1TQKKFJoiy9xTrWh7ZNIJmw" target="_blank" rel="noopener">IDEA</a>    提取码：ynpp</p>
-<p><a href="https://pan.baidu.com/s/1VCTL21zvB_Ga4pQbCFONHw" target="_blank" rel="noopener">WebStorm</a>    提取码：20yn</p>
-<p><a href="https://pan.baidu.com/s/14kYCupV5NbHZKmQAhps33A" target="_blank" rel="noopener">PyCharm</a>    提取码：9dtw</p>
-<p><a href="https://pan.baidu.com/s/1OsydOpKoCUrq3_n5zh78Xw" target="_blank" rel="noopener">PhpStorm</a>    提取码：iict</p>
-<h1 id="安装完成选择试用"><a href="#安装完成选择试用" class="headerlink" title="安装完成选择试用"></a>安装完成选择试用</h1><h4 id="此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options"><a href="#此时不要着急创建项目，右下角configure→-Edit-Custom-VM-Options" class="headerlink" title="此时不要着急创建项目，右下角configure→ Edit Custom VM Options"></a>此时不要着急创建项目，右下角configure→ Edit Custom VM Options</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在最后一行加入</span></span><br><span class="line">-javaagent:***<span class="comment">#jetbrains-agent.jar在本机的路径</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="重启编译器"><a href="#重启编译器" class="headerlink" title="重启编译器"></a>重启编译器</h1><h4 id="右下角-configure→Manage-License→actiation-code"><a href="#右下角-configure→Manage-License→actiation-code" class="headerlink" title="右下角 configure→Manage License→actiation code"></a>右下角 configure→Manage License→actiation code</h4><p>输入上面下载的激活码，大功告成</p>
-
+<h1 id="下载需要的jetbrain工具"><a href="#下载需要的jetbrain工具" class="headerlink" title="下载需要的jetbrain工具"></a>下载需要的jetbrain工具</h1>
+        
+          <a class="article-more-a" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/#more">more >></a>
+        
       
 
       
@@ -947,30 +732,9 @@
 
 <p><del>在安装mysql时要注意时区问题</del></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##在my.ini [mysqld]区域中加上</span></span><br><span class="line">default-time_zone = <span class="string">'+8:00'</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="在settings-py中把sqlite换成mysql"><a href="#在settings-py中把sqlite换成mysql" class="headerlink" title="在settings.py中把sqlite换成mysql"></a>在settings.py中把sqlite换成mysql</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mysite'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'123456'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">'3306'</span>,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><del>此时执行makemigration会提示django2.2/mysql ImproperlyConfigured: mysqlclient 1.3.13 or newer is required; you have 0.9.3</del></p>
-<ul>
-<li>不管我们遇到什么样的困难，勇敢的面对它，办法总比困难多</li>
-</ul>
-<h1 id="解决mysqlclient-1-3-13-or-newer-is-required-you-have-0-9-3"><a href="#解决mysqlclient-1-3-13-or-newer-is-required-you-have-0-9-3" class="headerlink" title="解决mysqlclient 1.3.13 or newer is required; you have 0.9.3"></a>解决mysqlclient 1.3.13 or newer is required; you have 0.9.3</h1><ul>
-<li>找到Anaconda安装目录，例如我的是D:\Anaconda</li>
-<li>进入D:\Anaconda3\Lib\site-packages\django\db\backends\mysql</li>
-<li>修改base.py</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注释下面两行 35/36</span></span><br><span class="line"><span class="keyword">if</span> version &lt; (<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>):</span><br><span class="line">     <span class="keyword">raise</span> ImproperlyConfigured(<span class="string">"mysqlclient 1.3.3 or newer is required; you have %s"</span> % Database.__version__)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改operations.py</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#146行</span><br><span class="line">if query is not None:</span><br><span class="line">    query &#x3D; query.decode(errors&#x3D;&#39;replace&#39;)</span><br><span class="line">return query</span><br><span class="line">#改为</span><br><span class="line">if query is not None:</span><br><span class="line">    query &#x3D; query.encode(errors&#x3D;&#39;replace&#39;)</span><br><span class="line">return query</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="这个时候，就大功告成了"><a href="#这个时候，就大功告成了" class="headerlink" title="这个时候，就大功告成了"></a>这个时候，就大功告成了</h3>
+        
+          <a class="article-more-a" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/#more">more >></a>
+        
       
 
       

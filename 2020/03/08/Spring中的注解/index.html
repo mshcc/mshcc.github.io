@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Spring中的注解 | 学习ing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011&#x2F;&#x2F;   创建对象		相当于xml文件中的bean标签@Component(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样@Controller:一般用在表现层      @Service：一般用于业务层@Repository：一般用在持久层① 持久层：采用DAO模式，建立实体类和数据">
+  <meta name="description" content="各种注解看的头疼">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring中的注解">
 <meta property="og:url" content="http://yoursite.com/2020/03/08/Spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3/index.html">
 <meta property="og:site_name" content="学习ing">
-<meta property="og:description" content="1234567891011&#x2F;&#x2F;   创建对象		相当于xml文件中的bean标签@Component(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样@Controller:一般用在表现层      @Service：一般用于业务层@Repository：一般用在持久层① 持久层：采用DAO模式，建立实体类和数据">
+<meta property="og:description" content="各种注解看的头疼">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-08T11:34:04.000Z">
-<meta property="article:modified_time" content="2020-03-08T13:07:35.024Z">
+<meta property="article:modified_time" content="2020-03-10T15:00:53.261Z">
 <meta property="article:author" content="mshcc">
 <meta name="twitter:card" content="summary">
   
@@ -154,7 +154,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   创建对象		相当于xml文件中的bean标签</span></span><br><span class="line"><span class="meta">@Component</span>(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样</span><br><span class="line"><span class="meta">@Controller</span>:一般用在表现层      </span><br><span class="line"><span class="meta">@Service</span>：一般用于业务层</span><br><span class="line"><span class="meta">@Repository</span>：一般用在持久层</span><br><span class="line">① 持久层：采用DAO模式，建立实体类和数据库表映射（ORM映射）。也就是哪个类对应哪个表，哪个属性对应哪个列。持久层的目的就是，完成对象数据和关系数据的转换。具体的实现方法。</span><br><span class="line">② 业务层：采用事务脚本模式。将一个业务中所有的操作封装成一个方法，同时保证方法中所有的数据库更新操作，即保证同时成功或同时失败。避免部分成功部分失败引起的数据混乱操作。对持久层的封装调用。</span><br><span class="line">③ 表现层：采用MVC模式。<span class="comment">//暂不理解</span></span><br><span class="line">    M称为模型，也就是实体类。用于数据的封装和数据的传输。</span><br><span class="line">    V为视图，也就是GUI组件，用于数据的展示。</span><br><span class="line">    C为控制，也就是事件，用于流程的控制</span><br></pre></td></tr></table></figure>
+        <p>各种注解看的头疼</p>
+<a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//   创建对象		相当于xml文件中的bean标签</span></span><br><span class="line"><span class="meta">@Component</span>(value):相当于把当前类存入spring容器,value用于指定bean的id，默认是当前类名，首字母小写。和以下三个作用一模一样</span><br><span class="line"><span class="meta">@Controller</span>:一般用在表现层      </span><br><span class="line"><span class="meta">@Service</span>：一般用于业务层</span><br><span class="line"><span class="meta">@Repository</span>：一般用在持久层</span><br><span class="line">① 持久层：采用DAO模式，建立实体类和数据库表映射（ORM映射）。也就是哪个类对应哪个表，哪个属性对应哪个列。持久层的目的就是，完成对象数据和关系数据的转换。具体的实现方法。</span><br><span class="line">② 业务层：采用事务脚本模式。将一个业务中所有的操作封装成一个方法，同时保证方法中所有的数据库更新操作，即保证同时成功或同时失败。避免部分成功部分失败引起的数据混乱操作。对持久层的封装调用。</span><br><span class="line">③ 表现层：采用MVC模式。<span class="comment">//暂不理解</span></span><br><span class="line">    M称为模型，也就是实体类。用于数据的封装和数据的传输。</span><br><span class="line">    V为视图，也就是GUI组件，用于数据的展示。</span><br><span class="line">    C为控制，也就是事件，用于流程的控制</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  注入数据	相当于xml文件中bean标签中的property标签</span></span><br><span class="line"><span class="meta">@Autowired</span> :自动按值的类型注入，只要容器中有唯一一个bean对象和要注入的变量类型匹配，就可以注入成功，没有或者多个会报错。多个时，如果变量名称和唯一一个bean保持一致，注入成功     在变量或者方法上注释。</span><br><span class="line"><span class="meta">@Qualifier</span>(value) :在按照类型基础上再按照名称注入。给类成员注入时不能单独使用，给方法参数注入时可以.value:用于指定注入的bean的id</span><br><span class="line"><span class="meta">@Resource</span>(name):name:用于指定bean的id，可以单独使用</span><br><span class="line">↑以上三个只能注入bean类型       →集合类型智能通过xml文件注入</span><br><span class="line"><span class="meta">@Value</span>(value):用于注入基本类型和String类型。</span><br><span class="line">    value:用于指定数据的值，可以使用Spring的SpEl    spring中的el表达式   $&#123;表达式&#125;</span><br></pre></td></tr></table></figure>
 
