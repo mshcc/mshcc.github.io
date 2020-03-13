@@ -130,6 +130,159 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数组和列表转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/13/%E6%95%B0%E7%BB%84%E5%92%8C%E5%88%97%E8%A1%A8%E8%BD%AC%E6%8D%A2/">数组和列表转换</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/03/13/%E6%95%B0%E7%BB%84%E5%92%8C%E5%88%97%E8%A1%A8%E8%BD%AC%E6%8D%A2/" class="archive-article-date">
+  	<time datetime="2020-03-13T14:17:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>包装类数组转列表最简单，调用<code>Arrays.asList</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = Arrays.asList(<span class="keyword">new</span> String[]&#123;<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>&#125;);</span><br><span class="line">    </span><br><span class="line">List&lt;Integer&gt; list=Arrays.asList(<span class="keyword">new</span> Integer[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;);</span><br><span class="line"><span class="comment">//其他类型一致</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>列表转成数组类型可以用<code>列表.toArray</code>,但是只能转成包装类型</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String[] str=list.toArray(<span class="keyword">new</span> String[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">Integer[] Int=list.toArray(<span class="keyword">new</span> Integer)</span><br><span class="line"><span class="comment">//其他类型一致</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不是包装类的列表和数组之间的转换稍微麻烦，现在还没弄懂，只是会用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] data = &#123;<span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">1</span>&#125;;</span><br><span class="line"><span class="comment">// int[] 转 List&lt;Integer&gt;</span></span><br><span class="line">List&lt;Integer&gt; list1 = Arrays.stream(data).boxed().collect(Collectors.toList());</span><br><span class="line"><span class="comment">// Arrays.stream(arr) 可以替换成IntStream.of(arr)。</span></span><br><span class="line"><span class="comment">// 1.使用Arrays.stream将int[]转换成IntStream。</span></span><br><span class="line"><span class="comment">// 2.使用IntStream中的boxed()装箱。将IntStream转换成Stream&lt;Integer&gt;。</span></span><br><span class="line"><span class="comment">// 3.使用Stream的collect()，将Stream&lt;T&gt;转换成List&lt;T&gt;，因此正是List&lt;Integer&gt;。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] arr1 = list1.stream().mapToInt(Integer::valueOf).toArray();</span><br><span class="line"><span class="comment">// 想要转换成int[]类型，就得先转成IntStream。</span></span><br><span class="line"><span class="comment">// 这里就通过mapToInt()把Stream&lt;Integer&gt;调用Integer::valueOf来转成IntStream</span></span><br><span class="line"><span class="comment">// 而IntStream中默认toArray()转成int[]。</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>包装类型数组和普通类型数组</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// int[] 转 Integer[]</span></span><br><span class="line">Integer[] integers1 = Arrays.stream(data).boxed().toArray(Integer[]::<span class="keyword">new</span>);</span><br><span class="line"><span class="comment">// 前两步同上，此时是Stream&lt;Integer&gt;。</span></span><br><span class="line"><span class="comment">// 然后使用Stream的toArray，传入IntFunction&lt;A[]&gt; generator。</span></span><br><span class="line"><span class="comment">// 这样就可以返回Integer数组。</span></span><br><span class="line"><span class="comment">// 不然默认是Object[]。</span></span><br><span class="line"><span class="comment">// List&lt;Integer&gt; 转 Integer[]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Integer[] 转 int[]</span></span><br><span class="line"><span class="keyword">int</span>[] arr2 = Arrays.stream(integers1).mapToInt(Integer::valueOf).toArray();</span><br><span class="line"><span class="comment">// 思路同上。先将Integer[]转成Stream&lt;Integer&gt;，再转成IntStream。</span></span><br><span class="line"><span class="comment">// Integer[] 转 List&lt;Integer&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/13/%E6%95%B0%E7%BB%84%E5%92%8C%E5%88%97%E8%A1%A8%E8%BD%AC%E6%8D%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
+    <article id="post-线程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/13/%E7%BA%BF%E7%A8%8B/">线程</a>
+    </h1>
+  
+
+        
+        
+<a href="/2020/03/13/%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-03-13T14:16:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>null</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/13/%E7%BA%BF%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+  
     <article id="post-JAVA中的容器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   
   <div class="article-inner">
@@ -153,7 +306,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h6 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h6><ul>
-<li><p>可以当作STL模板库中的向量看待</p>
+<li><p><del>可以当作STL模板库中的向量看待</del>        就一个东西嘛</p>
 </li>
 <li><p>是各种集合类的父类(或许是爷爷辈的)</p>
 <ul>
@@ -446,7 +599,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="爬虫初窥"><a href="#爬虫初窥" class="headerlink" title="爬虫初窥"></a>爬虫初窥</h3><h6 id="用爬虫写了个简单爬取小说的样例"><a href="#用爬虫写了个简单爬取小说的样例" class="headerlink" title="用爬虫写了个简单爬取小说的样例"></a>用爬虫写了个简单爬取小说的样例</h6>
+        <h3 id="爬虫初窥"><a href="#爬虫初窥" class="headerlink" title="爬虫初窥"></a>爬虫初窥</h3><ul>
+<li>爬虫时要注意伪装自己的程序，不要让服务器意识到我们是一段程序而不给我们响应</li>
+</ul>
+<p>待续~~</p>
+<h6 id=""><a href="#" class="headerlink" title=""></a></h6>
         
           <a class="article-more-a" href="/2020/03/06/%E5%B0%8F%E8%AF%B4%E7%88%AC%E8%99%AB-%E7%AE%80%E9%99%8B/#more">more >></a>
         
@@ -703,81 +860,10 @@
 
 
   
-    <article id="post-Django2.2配置Mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/">Django2.2配置MySQL</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/" class="archive-article-date">
-  	<time datetime="2020-01-18T03:46:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装pymysql"><a href="#安装pymysql" class="headerlink" title="安装pymysql"></a>安装pymysql</h1><ul>
-<li>File→Settings→Project Interpreter→右侧加号→搜索安装pymysql→apply→在<strong>init</strong>.py中</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br><span class="line"><span class="comment">#个人习惯__init__.py</span></span><br></pre></td></tr></table></figure>
-
-<p><del>在安装mysql时要注意时区问题</del></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##在my.ini [mysqld]区域中加上</span></span><br><span class="line">default-time_zone = <span class="string">'+8:00'</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
