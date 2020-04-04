@@ -6,13 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>学习ing</title>
+  <title>hadoop运行环境搭建 | 学习ing</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="学习ing">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="hadoop运行环境搭建">
+<meta property="og:url" content="http://yoursite.com/2020/03/22/hadoop%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="学习ing">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-22T06:50:59.000Z">
+<meta property="article:modified_time" content="2020-03-22T06:50:59.054Z">
 <meta property="article:author" content="mshcc">
 <meta name="twitter:card" content="summary">
   
@@ -128,35 +130,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-JAVAEE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-hadoop运行环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
   
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/01/JAVAEE/">JAVAEE</a>
+    <h1 class="article-title" itemprop="name">
+      hadoop运行环境搭建
     </h1>
   
 
         
         
-<a href="/2020/03/01/JAVAEE/" class="archive-article-date">
-  	<time datetime="2020-03-01T13:34:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+<a href="/2020/03/22/hadoop%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+  	<time datetime="2020-03-22T06:50:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//TODO 设置状态码302         </span></span><br><span class="line">        resp.setStatus(<span class="number">302</span>);</span><br><span class="line"><span class="comment">//设置响应头</span></span><br><span class="line">        resp.setHeader(<span class="string">"location"</span>,<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//也可以	</span></span><br><span class="line">        resp.sendRedirect(<span class="string">"redirect002"</span>);</span><br><span class="line"><span class="comment">//  重定向里的参数如果没有 以/开头，就访问相对路径，否则访问绝对路径(端口后跟上参数)</span></span><br><span class="line"><span class="comment">//可以获取相应的项目路径再加上需要的路径构成绝对路径</span></span><br><span class="line">        String contextPath = req.getContextPath();</span><br><span class="line">        resp.sendRedirect(contextPath+<span class="string">"/redirect002"</span>);</span><br></pre></td></tr></table></figure>
-
-<p><del>不明白为什么从浏览器访问服务器，重定向时需要绝对路径，暂时没发现相对路径会出错</del></p>
-        
-          <a class="article-more-a" href="/2020/03/01/JAVAEE/#more">more >></a>
         
       
 
@@ -168,16 +163,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/01/JAVAEE/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/03/22/hadoop%E8%BF%90%E8%A1%8C%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/19/Mysql%E5%85%8D%E5%AE%89%E8%A3%85%E7%89%88%E5%AE%89%E8%A3%85-5-7-23/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mysql免安装版安装(5.7.23)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -197,229 +251,17 @@
 
 
 
-
-
-
-  
-    <article id="post-JdbcTemplate 简单用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">JdbcTemplate 简单用法</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-29T13:39:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="JdbcTemplate-简单用法"><a href="#JdbcTemplate-简单用法" class="headerlink" title="JdbcTemplate 简单用法"></a>JdbcTemplate 简单用法</h1>
-        
-          <a class="article-more-a" href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/29/JdbcTemplate%20%E7%AE%80%E5%8D%95%E7%94%A8%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-jetbrain用到2089" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">半永久破解(仅19.3.1有效)</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/" class="archive-article-date">
-  	<time datetime="2020-01-21T09:29:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="下载破解包"><a href="#下载破解包" class="headerlink" title="下载破解包"></a>下载破解包</h1><p><a href="https://pan.baidu.com/s/1eE9Hhuizq7quPZ1HCNNWlQ" target="_blank" rel="noopener">百度网盘</a></p>
-<h1 id="下载需要的jetbrain工具"><a href="#下载需要的jetbrain工具" class="headerlink" title="下载需要的jetbrain工具"></a>下载需要的jetbrain工具</h1>
-        
-          <a class="article-more-a" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/21/jetbrain%E7%94%A8%E5%88%B02089/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-  
-    <article id="post-Django2.2配置Mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/">Django2.2配置MySQL</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/" class="archive-article-date">
-  	<time datetime="2020-01-18T03:46:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="安装pymysql"><a href="#安装pymysql" class="headerlink" title="安装pymysql"></a>安装pymysql</h1><ul>
-<li>File→Settings→Project Interpreter→右侧加号→搜索安装pymysql→apply→在<strong>init</strong>.py中</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br><span class="line"><span class="comment">#个人习惯__init__.py</span></span><br></pre></td></tr></table></figure>
-
-<p><del>在安装mysql时要注意时区问题</del></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##在my.ini [mysqld]区域中加上</span></span><br><span class="line">default-time_zone = <span class="string">'+8:00'</span></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/18/Django2.2%E9%85%8D%E7%BD%AEMysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
   
+
+  
+
+  
+
+  
+
+
 
 
           </div>
@@ -442,8 +284,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
